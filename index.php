@@ -9,11 +9,11 @@
 			  Категории
 			  
 			  <ul id="list">
-				<li><a hreft="index.php?C=1"> Категория 1</a></li>
-				<li><a hreft="index.php?C=2"> Категория 2</a></li>
-				<li><a hreft="index.php?C=3"> Категория 3</a></li>
-				<li><a hreft="index.php"> Домой</a></li>
-				<li><a hreft="index.php?O=99"> Форма</a></li>
+				<li><a href="index.php?C=1"> Категория 1</a></li>
+				<li><a href="index.php?C=2"> Категория 2</a></li>
+				<li><a href="index.php?C=3"> Категория 3</a></li>
+				<li><a href="index.php"> Домой</a></li>
+				<li><a href="index.php?O=99"> Форма</a></li>
 			  </ul>    
 			</div>
 			<div id="conteiner">
@@ -29,7 +29,7 @@
 						</div>
 						<div id="content">
 						<?php
-							$0=$_GET["O"];
+							$O=$_GET["O"];
 							switch($O) {		     
 							 case "1-1": echo(file_get_contents("object1-1.html")); break;
 							 case "1-2": echo(file_get_contents("object1-2.html")); break;
