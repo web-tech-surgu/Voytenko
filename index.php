@@ -29,8 +29,8 @@
 						</div>
 						<div id="content">
 						<?php
-							$0=$_GET["0"];
-							switch($0) {		     
+							$0=$_GET["O"];
+							switch($O) {		     
 							 case "1-1": echo(file_get_contents("object1-1.html")); break;
 							 case "1-2": echo(file_get_contents("object1-2.html")); break;
 							 case "1-3": echo(file_get_contents("object1-3.html")); break;
