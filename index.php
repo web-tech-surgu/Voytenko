@@ -19,7 +19,7 @@
 			<div id="conteiner">
 					<div id="objects">
 					  <?php 
-						 $C_GET["C"];
+						 $C= $_GET["C"];
 						   switch($C)  {
 							 case "1": echo(file_get_contents("objects1.html")); break;
 							 case "2": echo(file_get_contents("objects2.html")); break;
