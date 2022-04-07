@@ -40,7 +40,7 @@
 							 case "3-1": echo(file_get_contents("object3-1.html")); break;
 							 case "3-2": echo(file_get_contents("object3-2.html")); break;
 							 case "3-3": echo(file_get_contents("object3-3.html")); break;
-							 case "99": include("form_lab6.php");  break;
+							 case "99": include("form_LAB6.php");  break;
 							 default: echo(file_get_contents("applicate.html"));}
 						?>
 					</div>
