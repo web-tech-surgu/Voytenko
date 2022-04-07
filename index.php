@@ -18,12 +18,19 @@
 			</div>
 			<div id="conteiner">
 					<div id="objects">
-					 
+					  <?php 
+						 $C_GET["C"];
+						   switch($C)  {
+							 case "1": echo(file_get_contents("objects1.html")); break;
+							 case "2": echo(file_get_contents("objects2.html")); break;
+							 case "3": echo(file_get_contents("objects3.html")); break;
+							 default:echo(file_get_contents("about.html"));}
+					   ?>
 						</div>
 						<div id="content">
-										<?php
-							$0=$_GET["O"];
-							switch($O) {		     
+						<?php
+							$0=$_GET["0"];
+							switch($0) {		     
 							 case "1-1": echo(file_get_contents("objects1-1.html")); break;
 							 case "1-2": echo(file_get_contents("objects1-2.html")); break;
 							 case "1-3": echo(file_get_contents("objects1-3.html")); break;
@@ -41,6 +48,3 @@
 		</body>
     </html>
   
-				
-				
-				
