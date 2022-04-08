@@ -68,7 +68,7 @@ $C= $_GET["C"];
 	        case "3": $objects=file_get_contents("objects3.php")); break;
 	        default: $objects=file_get_contents("about.php");
 	   }
-          $O=$_GET["O"];
+          $O= $_GET["O"];
 	   switch($O) {		     
 		case "1-1": $content=file_get_contents("object1-1.php"); break;
 		case "1-2": $content=file_get_contents("object1-2.php"); break;
