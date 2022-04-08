@@ -1,4 +1,3 @@
-
 <?php
 $tmp=file_get_contents("lab7.tpl");  // Загрузка шаблона впеременную
 $objects="";  // Очистка переменных
