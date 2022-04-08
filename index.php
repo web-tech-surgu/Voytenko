@@ -51,7 +51,7 @@
 
 <html>
 		<head>
-		 <title>Сайт</title>
+		 <title>Лабораторная работа 7. Динамическая генерация web-страниц на основе шаблона</title>
 		 <link rel="stylesheet" type="text/css" href="stayle.css" />
 		</head>
 		<body>
@@ -97,61 +97,63 @@ $content="";
 		case "3-3": $content=file_get_contents("object3-3.php"); break;
 		default: $content=file_get_contents("applicate.php");
 	   };
-	$tmp = str_replace("{objects}",;objects,$tmp);
-							
+	
+	$tmp = str_replace("{object}",$objects, $tmp);
+	$tmp = str_replace("{content}",$contents, $tmp);
+echo $tmp;
+?>
+<?php
+$tmp=file_get_contents("lab7.tpl");  // Подключение файла с шаблоном
+$objects=""; 
+$content="";
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-
 function load_content($s) // Эта функция будет вызываться вместо вывода данных браузеру
 {
     $GLOBALS['description'].=$s; // Новые данные добавляем к переменной
 }
-$categories=file_get_contents("src/category.php");
-
-	$Categ=$_GET["Categ"];
-	switch ($Categ)
-	{
-		case "parlamentary": $objects=file_get_contents("src/object/parlamentary_object.php"); break;
-		case "notparlamentary": $objects=file_get_contents("src/object/extrparlamentary_object.php"); break;
-		default: $objects=file_get_contents("src/object.php");		
-	}
-
-	$Obj=$_GET["Obj"];
-	switch ($Obj)
-	{
-		case "ER": $content=file_get_contents("src/description/ER.php"); break;
-		case "KPRF": $content=file_get_contents("src/description/KPRF.php"); break;
-		case "LDPR": $content=file_get_contents("src/description/LDPR.php"); break;
-		case "CR": $content=file_get_contents("src/description/CR.php"); break;
-		case "RODINA": $content=file_get_contents("src/description/RODINA.php"); break;
-		case "introduction_parlamentary": $content=file_get_contents("src/description/introduction_parlamentary.php"); break;
-		case "GP": $content=file_get_contents("src/description/GP.php"); break;
-		case "patriot": $content=file_get_contents("src/description/patriot.php"); break;
-		case "apple_kek": $content=file_get_contents("src/description/apple_kek.php"); break;
-		case "rost": $content=file_get_contents("src/description/rost.php"); break;
-		case "PARNAS": $content=file_get_contents("src/description/PARNAS.php"); break;
-		case "progress": $content=file_get_contents("src/description/progress.php"); break;
-		case "green": $content=file_get_contents("src/description/green.php"); break;
-		case "introduction_notparlamentary": $content=file_get_contents("src/description/introduction_notparlamentary.php"); break;
-		case "vstupit":
-		ob_start('load_content'); // Включаем кеширование и указываем, что вместо отправки данных клиенту, их нужно отправлять в функцию
-		include("src/description/vstupit.php"); break;
-		ob_end_flush();   // Выключаем кеширование... теперь все данные будут уходить браузеру		
-		
-		default: $content=file_get_contents("src/description.php");	
-	}
-	$tmp = str_replace("{category}", $categories, $tmp);
-$tmp = str_replace("{objects}", $objects, $tmp);
-$tmp = str_replace("{description}", $content, $tmp);
-
-echo $tmp;	
+$C= $_GET["C"];
+	   switch($C)  {
+	        case "1": $objects=file_get_contents("objects1.php")); break;
+	        case "2": $objects=file_get_contents("objects2.php")); break;
+	        case "3": $objects=file_get_contents("objects3.php")); break;
+	        default: $objects=file_get_contents("about.php");
+	   }
+          $O=$_GET["O"];
+	   switch($O) {		     
+		case "1-1": $content=file_get_contents("object1-1.php"); break;
+		case "1-2": $content=file_get_contents("object1-2.php"); break;
+		case "1-3": $content=file_get_contents("object1-3.php"); break;
+		case "2-1": $content=file_get_contents("object2-1.php"); break;
+		case "2-2": $content=file_get_contents("object2-2.php"); break;
+		case "2-3": $content=file_get_contents("object2-3.php"); break;
+		case "3-1": $content=file_get_contents("object3-1.php"); break;
+		case "3-2": $content=file_get_contents("object3-2.php"); break;
+		case "3-3": $content=file_get_contents("object3-3.php"); break;
+	    case "99":{
+		       ob_start('load_content'); // Включаем кеширование и указываем, что вместо отправки данных клиенту, их нужно отправлять в функцию
+		       include("registration_form.php");
+		       ob_end_flush();   // Выключаем кеширование... теперь все данные будут уходить браузеру
+		       break;
+	    }
+		default: $content=file_get_contents("applicate.php");	
+	    };
+$tmp = str_replace("{object}",$objects, $tmp);
+$tmp = str_replace("{content}",$contents, $tmp);
+echo $tmp;
 ?>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
