@@ -63,37 +63,53 @@
 				<a href="lab6.php?C=2"> Категория 2</a>
 				<a href="lab6.php?C=3"> Категория 3</a>
 				<a href="lab6.php"> Домой</a>
-  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  <?php
-
-$tmp=file_get_contents("index.tpl");  // Подключение файла с шаблоном
-
-$category="";
-$objects="";
-$description="";
+			 </div>
+				<div id="conteiner">
+					<div id="objects">
+			{objects}
+					</div>
+					<div id="content">
+			{content}
+		        		</div>
+				</div>
+		</body>
+<?php
+$tmp=file_get_contents("lab7.tpl");  // Загрузка шаблона впеременную
+$objects="";  // Очистка переменных
+$content="";
+	$C= $_GET["C"];
+	   switch($C)  {
+	        case "1": $objects=file_get_contents("objects1.php")); break;
+	        case "2": $objects=file_get_contents("objects2.php")); break;
+	        case "3": $objects=file_get_contents("objects3.php")); break;
+	        default: $objects=file_get_contents("about.php");
+	   }
+	$O=$_GET["O"];
+	   switch($O) {		     
+		case "1-1": $content=file_get_contents("object1-1.php"); break;
+		case "1-2": $content=file_get_contents("object1-2.php"); break;
+		case "1-3": $content=file_get_contents("object1-3.php"); break;
+		case "2-1": $content=file_get_contents("object2-1.php"); break;
+		case "2-2": $content=file_get_contents("object2-2.php"); break;
+		case "2-3": $content=file_get_contents("object2-3.php"); break;
+		case "3-1": $content=file_get_contents("object3-1.php"); break;
+		case "3-2": $content=file_get_contents("object3-2.php"); break;
+		case "3-3": $content=file_get_contents("object3-3.php"); break;
+		default: $content=file_get_contents("applicate.php");
+	   };
+	$tmp = str_replace("{objects}",;objects,$tmp);
+							
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 
 function load_content($s) // Эта функция будет вызываться вместо вывода данных браузеру
 {
